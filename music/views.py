@@ -7,5 +7,6 @@ class ListSongsView(ListAPIView):
     """
     Provides a get method handler.
     """
+
     queryset = Song.objects.all()
     serializer_class = SongSerializer

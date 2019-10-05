@@ -27,9 +27,7 @@ class GetAllSongsTest(BaseViewTest):
         exist when we make a GET request to the songs/ endpoint
         """
         # hit the API endpoint
-        response = self.client.get(
-            reverse("songs-all", kwargs={"version": "v1"})
-        )
+        response = self.client.get(reverse("songs-all", kwargs={"version": "v1"}))
         # fetch the data from db
         expected = Song.objects.all()
         serialized = SongSerializer(expected, many=True)
